@@ -62,3 +62,5 @@ def max_sub_array_of_size_k(k, arr):
 
   return -1
   
+# O(N) time complexity, where N is the size of array arr since I loop through the array once and I do not recompute sums with overlapping windows
+# O(1) space complexity, since the size of the window that I calculate on is constant.
