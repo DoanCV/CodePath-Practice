@@ -50,5 +50,7 @@ def longest_substring_with_k_distinct(str_given, k):
 
   return -1
 
-# O(N) time complexity, where N is the length of the string, since we traverse through the length of the string once with a sliding window. Values are not reinserted or recalculated.
+# O(N + N) time complexity, where N is the length of the string, since we traverse through the length of the string once with a sliding window. Values are not reinserted or recalculated.
+  # ⁂ O(N) as O(N + N) asymptotically is just O(N)
+
 # O(K) space complexity, where k is the size of the window which is the size of the hash table we are inserting into.
