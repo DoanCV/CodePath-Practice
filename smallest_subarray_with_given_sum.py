@@ -73,5 +73,6 @@ def smallest_subarray_with_given_sum(s, arr):
 # O(N + N) time complexity since the outer for loop traverses the full length of the array and the innder while loop follows along but there is no recomputation. 
   # The for loop moves the window_end
   # The while loop moves the window_start
+# ⁂ O(N) as O(N + N) asymptotically is just O(N)
   
 # O(1) space complexity since even though the window size is variable, it is bounded by the length of the given array which is constant.
