@@ -66,4 +66,4 @@ def fruits_into_baskets(fruits):
   return -1
 
 # O(N+N) => O(N) time complexity, where N is the length of the array, since the sliding window traverses the array once and there are no repeating calculations as the window_start and window_end trail together.
-# O(2) => O(1) space complexity, since the max size of the hash table we insert into is 2, the number of baskets which can only have one type of fruit (key)
+# O(3) => O(1) space complexity, since the max size of the hash table we insert into is 3. We stop at 3 since that is more than the number of baskets we have, 2, which can only have one type of fruit (key)
