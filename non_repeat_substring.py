@@ -67,3 +67,6 @@ def non_repeat_substring(str_given):
   return max_length
 
   return -1
+
+# O(N) where N is the length of the string. I traverse through the string once and do not recompute. 
+# O(k) where k is the length of the hashtable. Since we know the string only has alphabet k is at most 26. k is also at most n since they are only equal when the entire string has no repeating characters. If there were repeating characters, the hashtable length would be smaller.
