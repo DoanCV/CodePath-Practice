@@ -52,3 +52,6 @@ def length_of_longest_substring(str_given, k):
   return max_length
 
   return -1
+
+# O(N) time complexity, where N is the length of the string, since we are using sliding window, traversing the length of the string once and not recomputing
+# O(k) space complexity, where k is the size of the hash table. If there are no repeating letters then k = N otherwise k < N. k is also at most 26 since we know that there are 26 letters in alphabet and that is the only valid input.
