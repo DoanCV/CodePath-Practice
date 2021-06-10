@@ -49,3 +49,6 @@ def remove_duplicates(arr):
   return non_duplicate
 
   return -1
+
+# O(N) time complexity, where N is the length of the given array, since we have traverse through the length of the array and we have to check every element if it is a duplicate or not once.
+# O(1) space complexity since we are not creating another data structure.
