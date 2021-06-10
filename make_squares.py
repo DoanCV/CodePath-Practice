@@ -37,9 +37,14 @@ def make_squares(arr):
   return squares
 
   ex.
-  [-2,-1,0,1,2]
-  [0,1,4]
-
+  [-2,-1,0,1,2] start = 0, end = 4, curr_result = 4
+  [4] start = 0, end = 3, curr_result = 3
+  [4,4] start = 1, end = 3, curr_result = 2
+  [1,4,4] start = 1, end = 2, curr_result = 1
+  [1,1,4,4] start = 2, end = 2, curr_result = 0
+  we need '<=' for the while loop (else executes as many as if means we will leave out middle for odd length array)
+  [0,1,1,4,4] start = 2, end = 1, curr_result = -1
+  return [0,1,1,4,4]
   """
 
   squares = [0] * (len(arr))
@@ -47,7 +52,7 @@ def make_squares(arr):
   end = len(arr) - 1
   curr_result = len(arr) - 1
 
-  while start < end:
+  while start <= end:
     left_square = arr[start] ** 2
     right_square = arr[end] ** 2
 
@@ -62,7 +67,7 @@ def make_squares(arr):
   return squares
 
 # O(N) time complexity, where N is the length of the given array, since we check every index of the array once
-# O(1) space complexity since we are not creating new data structures.
+# O(N) space complexity since we are creating a new array of size N.
 
 """
   alternate logic:
