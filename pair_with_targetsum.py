@@ -29,3 +29,6 @@ def pair_with_targetsum(arr, target_sum):
 
   return None
   return [-1, -1]
+
+# O(N) time complexity, where N is the length of the given array, since the worst case the two pointers meet in the middle, having traveled N/2 positions each. O(N/2) is asymotaotically O(N).
+# O(1) space complexity since we are not creating any data structures.
