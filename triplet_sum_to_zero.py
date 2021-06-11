@@ -1,6 +1,5 @@
-  """ 
-  two pointer after sort with equation x + y + z = 0 => -x = y + z 
-  sort is good since we can check adjacent elements to avoid duplicates
+  """   two pointer after sort with equation x + y + z = 0 => -x = y + z 
+        sort is good since we can check adjacent elements to avoid duplicates
 
   keep track of:
   left = current position
@@ -66,3 +65,5 @@ def find_pair(arr, neg_x, left, triplets):
     else:
       right -= 1
 
+# O(N^2) time complexity, where N is the size of the given array. O(N^2) is simplified from O(NlogN + N^2). NlogN is from sort, one N from N^2 is from loopoing thtough all x values and the other N is from two pointer searching for pairs that add up to -x.
+# O(N) space complexity, where N is the size of the given array. We have another array which is the sorted version of the given array. I will ignore the triplets size since its required to return and would be C(N,3)
