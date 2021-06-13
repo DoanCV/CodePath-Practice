@@ -49,3 +49,6 @@ def triplet_with_smaller_sum(arr, target):
       else:
         right -= 1
   return count
+
+# O(N^2) time complexity, where N is the length of the given array. The N^2 is simplified from NlogN + N^2. NlogN is sort. One N from the N^2 is from the outer for loop and the other is from the two pointer searching the rest of the sorted array.
+# O(N) space complexity, where N is the length of the given array. We need N space to sort and the given array and store it.
