@@ -10,10 +10,8 @@ target_sum - min_diff
   return value
 
 logic:
-
 sort the given array
 initialize min_diff
-
 loop through (the length of the array - 2) since we are looking at triplets, i gets up to lest two theres no point in checking
 
   # intialize left and right of the remainder of the array to see if a pair (left,right) and current value are close
@@ -66,3 +64,6 @@ def triplet_sum_close_to_target(arr, target_sum):
       else:
         right -= 1
   return target_sum - min_diff
+
+# O(N^2) time complexity, where N is the size of the given array. The N^2 is simplified from NlogN + N^2. NlogN is from sort. One N from N^2 is the outer for loop and the other N is the two pointers traversing the rest of the array.
+# O(N) space complexity, where N is the size of the given array. We needed to sort the given array so that takes up the same size.
