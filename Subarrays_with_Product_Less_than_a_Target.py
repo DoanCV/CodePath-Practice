@@ -27,7 +27,7 @@ loop through the length of the array with window_end
     window_start += 1
 
   # append since valid
-    # can use a deque (pronounced 'deck')
+    # can use a deque (pronounced 'deck') since we need to insert at index 0 which insert(0, value) is slower than appendleft(value)
   
 return results
 """
