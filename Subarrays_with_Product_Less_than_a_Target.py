@@ -27,10 +27,30 @@ loop through the length of the array with window_end
     window_start += 1
 
   # append since valid
-    # use a deque (pronounced 'deck')
+    # can use a deque (pronounced 'deck')
   
 return results
 """
+
+def find_subarrays(arr, target):
+  results = []
+  window_start = 0
+  curr_product = 1
+
+  for window_end in range(len(arr)):
+    curr_product *= arr[window_end]
+
+    while curr_product >= target and window_start < len(arr):
+      curr_product /= arr[window_start]
+      window_start += 1
+
+    curr_array = []
+    for i in range(window_end, window_start - 1, -1):
+      curr_array.insert(0,arr[i])
+      results.append(list(curr_array))
+  return results
+
+""" Deque version
 from collections import deque
 def find_subarrays(arr, target):
   results = []
@@ -49,6 +69,7 @@ def find_subarrays(arr, target):
       curr_array.appendleft(arr[i])
       results.append(list(curr_array))
   return results
+"""
 
 # O(N^3) time complexity, where N is the size of the given array. Odd one. The sliding window takes N time. However, the subarrays are worst case quadratic so overall the upper bound is cubic.
 # O(N) space complecity if we ignore the 'results' output size. The curr_array is at worst the size of the given array. However, if we do take into account the output, the subarrays take up worse case N^2 since there are sum(i) from i = 1 to N subarrays. That summation is equal to n(n+1)/2 which is asymptotically quadratic. Linear curr_array times the worst case quadratic is cubic.
