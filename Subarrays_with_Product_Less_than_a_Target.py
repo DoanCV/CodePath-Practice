@@ -49,3 +49,6 @@ def find_subarrays(arr, target):
       curr_array.appendleft(arr[i])
       results.append(list(curr_array))
   return results
+
+# O(N^3) time complexity, where N is the size of the given array. Odd one. The sliding window takes N time. However, the subarrays are worst case quadratic so overall the upper bound is cubic.
+# O(N) space complecity if we ignore the 'results' output size. The curr_array is at worst the size of the given array. However, if we do take into account the output, the subarrays take up worse case N^2 since there are sum(i) from i = 1 to N subarrays. That summation is equal to n(n+1)/2 which is asymptotically quadratic. Linear curr_array times the worst case quadratic is cubic.
