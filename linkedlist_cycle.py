@@ -14,5 +14,5 @@ def has_cycle(head):
       return True
   return False
 
-# O(N) time complexity, where N is the length of the array, since the hare will meet the tortoise in the same loop.
+# O(N) time complexity, where N is the length of the given linkedlist, since the hare will meet the tortoise in the same loop.
 # O(1) space complexity, since we are not creating any new data structures.
