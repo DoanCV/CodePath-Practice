@@ -25,3 +25,5 @@ def calculate_next(num):
     sum += int(num[i])**2
   return sum
 
+# O(logN) time complexity, where N is the given number.
+# O(1) space complexity since we are not creating new data structures.
