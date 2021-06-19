@@ -33,6 +33,9 @@ def reverse_every_k_elements(head, k):
     if curr is None:
       break
     
-    prev = end_of_pre_sublist
+    prev = end_of_new_sublist
 
-  return head  
+  return head
+
+# O(N) time complexity, where N is the number of nodes in the given linkedlist, since we solve in one pass through the entire linkedlist.
+# O(1) space complexity since we are not using extra data structures.
