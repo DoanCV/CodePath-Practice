@@ -41,7 +41,7 @@ def reverse_every_k_elements(head, k):
 # O(1) space complexity since we are not using extra data structures.
 
 # The above reverses everything even is the last sublist is smaller than k
-# If the last sublist size is less than k do not reverse it, we will keep a count of executions of reversing k size lists. Integer division will let us know when to stop since it rounds down. At that point we do not reverse the remaining nodes.
+# If the last sublist size is less than k do not reverse it, we will keep a count of executions of reversing k size lists. We will first get the length of the linkedlist to see how many k sublists there are to reverse. Integer division will let us know when to stop since it rounds down. At that point we do not reverse the remaining nodes.
 """
 def reverse_every_k_elements(head, k):
   if k <= 1 or head is None:
