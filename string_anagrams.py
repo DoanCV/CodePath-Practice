@@ -19,7 +19,7 @@ loop through the length of the given string with window_end
   if freq_matches == len(counts):
     append window_start to result_indexes
   
-  while window_end >= len(given string) - 1
+  if window_end >= len(given string) - 1
     # shrink
     if character at position window_start is in counts
       if the frequency of the character at position window_start is 0
@@ -61,3 +61,5 @@ def find_string_anagrams(string, pattern):
 
   return result_indexes
 
+# O(N + M) time complexity, where N is the length of the given string and M is the length of the given pattern, since we pass through the length of given strings once.
+# O(M) space complexity since in the worst case the pattern is only distinct characters so that is the size of the hashmap. For the output, O(N) space complexity since in the worst case we only have one character pattern in a string with just that same character so every index is the start of an anagram.
