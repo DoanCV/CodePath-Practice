@@ -66,3 +66,6 @@ def find_substring(str_given, pattern):
     return ""
 
   return str_given[start_of_substring : start_of_substring + minimum_length]
+
+# O(N + M) time complexity where N is the length of the given string and M is the length of the given pattern. We traverse though the length of each of the two inputs once.
+# O(M) space complexity since in the worst case the pattern has only distinct characters which makes its length euqal to size of the hashmap.
