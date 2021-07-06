@@ -47,3 +47,6 @@ def traverse(root):
     
     result.append(curr_level)
   return result
+
+# O(N) time complexity, where N is the number of nodes in the binary tree, since we traverse through all nodes once.
+# O(N) space complexity since the output is all of the nodes we visited in the expected order. In the worst case, the lowest level has N/2 nodes and the queue will store this which is asymptotically linear.
