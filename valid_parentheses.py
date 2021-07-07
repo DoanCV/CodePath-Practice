@@ -26,5 +26,5 @@ class Solution:
                     return False
         return len(stack) == 0
       
-# O(N) times complexity, where N is the length of the given string, since we traverse through the string once.
+# O(N) time complexity, where N is the length of the given string, since we traverse through the string once.
 # O(N) space complexity since the stack stores all of the opening parentheses.
