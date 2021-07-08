@@ -20,7 +20,7 @@ def traverse(root):
   queue.append(root)
 
   direction_left_to_right = True
-  while queue is not None:
+  while queue:
 
     current_level_length = len(queue)
     current_level = deque()
