@@ -19,7 +19,7 @@ def traverse(root):
   queue = deque()
   queue.append(root)
 
-  direction_left = True
+  direction_left_to_right = True
   while queue is not None:
 
     current_level_length = len(queue)
@@ -28,7 +28,7 @@ def traverse(root):
     for _ in range(current_level_length):
       current_node = queue.popleft()
       
-      if direction_left:
+      if direction_left_to_right:
         reordered_level.append(current_node.val)
       else:
         reordered_level.appendleft(current_node.val)
@@ -39,5 +39,5 @@ def traverse(root):
         queue.append(current_node.right)
 
     result.append(list(reordered_level))
-    direction_left = not direction_left
+    direction_left_to_right = not direction_left_to_right
   return result
