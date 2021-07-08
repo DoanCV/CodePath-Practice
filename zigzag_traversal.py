@@ -41,3 +41,6 @@ def traverse(root):
     result.append(list(current_level))
     direction_left_to_right = not direction_left_to_right
   return result
+
+# O(N) time complexity, where N is the number of nodes in the given binary tree, since we visit each node of the tree once.
+# O(N) space complexity since in the worst case the most nodes we have in the queue called queue is N/2, which is at the bottom level. N/2 is asymptotically N.
