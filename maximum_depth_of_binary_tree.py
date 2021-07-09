@@ -6,7 +6,7 @@ class TreeNode:
     self.left, self.right = None, None
 
 """
-bfs since we are looking for the minimum depth where we have a leaf node
+bfs since we are looking for the maximum depth
 
 same idea as tree level traversal but we do not keep track of the nodes at each level, instead we keep track of the depth and return it once we are at the bottom
 """
