@@ -60,3 +60,6 @@ def connect_level_order_siblings(root):
       # save current node as previous
       prev = current_node
   return
+
+# O(N) time complexity, where N is the number of nodes in the given binary tree, since we have to visit every node once.
+# O(N) space complexity since in the worst case, the bottom level will have the most nodes, N/2, in the queue.
