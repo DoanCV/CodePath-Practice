@@ -40,5 +40,5 @@ class Solution:
         
         return high - low + 1
       
-# O(N) time complexity, where N is the length of the given array, since we traverse the given array linearly with sinlge loops.
+# O(N) time complexity, where N is the length of the given array, since we traverse the given array linearly with single loops.
 # O(1) space complexity since we are not using any other data structures.
