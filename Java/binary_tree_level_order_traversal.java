@@ -38,9 +38,7 @@ class LevelOrderTraversal {
       }
       result.add(curr_level);
     }
-
     return result;
-
   }
 
 
