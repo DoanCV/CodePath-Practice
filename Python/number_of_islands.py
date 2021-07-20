@@ -35,3 +35,6 @@ class Solution:
         self.dfs(grid, row - 1, column)
         self.dfs(grid, row, column + 1)
         self.dfs(grid, row, column - 1)
+
+# O(N * M) time complexity, where N is the number of rows and M is the number of columns in the given matrix. We have to traverse through the entire matrix to check for islands.
+# O(1) space complexity, since we are not using any extra data structures.
