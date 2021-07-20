@@ -6,13 +6,15 @@ def convert(arr):
   """
   rowIndex * numberOfColumns + columnIndex
   """
-  result = []
-  if not arr:
-    return result
   
   row_count = len(arr)
   column_count = len(arr[0])
   
+  result = [0] * (row_count * column_count)
+  
+  if not arr:
+    return result
+      
   for i in range(row_count):
     for j in range(column_count):
       index = i * column_count + j
