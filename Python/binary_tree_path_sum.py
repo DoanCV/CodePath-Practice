@@ -19,3 +19,7 @@ def has_path(root, sum):
     return True
   
   return has_path(root.left, sum - root.val) or has_path(root.right, sum - root.val)
+
+
+# O(N) time complexity, where N is the number of nodes in the given binary tree, since in the worst case our leaf nodes are at the lowest height and anything higher is not valid. In that case we check every node once.
+# O(N) space complexity since we have a recursion stack. In the worst case, each node has only one child like a linkedlist.
