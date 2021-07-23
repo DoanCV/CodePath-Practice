@@ -22,4 +22,4 @@ def recurse(currentNode, sum, currentPath, allPaths):
     recurse(currentNode.left, sum - currentNode.val, currentPath, allPaths)
     recurse(currentNode.right, sum - currentNode.val, currentPath, allPaths)
 
-  del currentPath[-1]
+  currentPath.pop()
