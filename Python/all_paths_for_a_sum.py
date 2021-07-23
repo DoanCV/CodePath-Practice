@@ -14,12 +14,12 @@ def recurse(currentNode, sum, currentPath, allPaths):
   if currentNode is None:
     return 
   
-  currentPath.append(list(currentNode))
+  currentPath.append(currentNode.val)
 
   if currentNode.val == sum and currentNode.left is None and currentNode.right is None:
-    allPaths.append(currentPath)
+    allPaths.append(list(currentPath))
   else:
     recurse(currentNode.left, sum - currentNode.val, currentPath, allPaths)
     recurse(currentNode.right, sum - currentNode.val, currentPath, allPaths)
 
-  currentpath.pop()
+  del currentPath[-1]
