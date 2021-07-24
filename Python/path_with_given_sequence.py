@@ -38,4 +38,4 @@ def dfs(current_node, depth, sequence):
   return dfs(current_node.left, depth + 1, sequence) or dfs(current_node.right, depth + 1, sequence)
 
 # O(N) time complexity, where N is the number of nodes in the given binary tree, since in the worst case we visit each node once
-# O(N) space complexity since we have a recursive call stack
+# O(N) space complexity since we have a recursive call stack. In the worst case, each node has one child like a linkedlist which makes the recursive call stack have size N.
