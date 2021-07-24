@@ -55,3 +55,26 @@ def dfs(current_node, path_sum, all_path_sum):
   
 # O(N) time complexity, where N is the number of nodes in the given binary tree, since we have to visit each node once.
 # O(N) space complexity since we have a recursive call stack. In the worst case each node has only one child node like a linkedlist.
+
+
+
+
+"""
+A cleaner solution:
+We have used a string to concatentate the digits of out path value and an array since all_path_sum would not return properly.
+  Instead, path_sum = path_sum * 10 + current_node.val
+
+def find_sum_of_path_numbers(root): 
+  return dfs(root, 0)
+
+def dfs(current_node, path_sum):
+  if current_node is None:
+    return 0
+  
+  path_sum = path_sum * 10 + current_node.val
+  
+  if current_node.left is None and current_node.right is None:
+    return path_sum
+  
+  return dfs(current_node.left, path_sum) + dfs(current_node.right, path_sum)
+"""
