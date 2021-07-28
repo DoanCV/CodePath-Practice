@@ -1,3 +1,10 @@
+"""
+Reverse the whole array with two pointers
+Scan for a word (delimited by space) and reverse each word
+
+if we are at the end we won't detect a space so we will need to reverse the last word as well
+"""
+
 def reverse_word(sentence, start, end):
   
   while start < end:
