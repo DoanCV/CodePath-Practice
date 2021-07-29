@@ -1,12 +1,12 @@
 class Solution:
     def dfs(self, row, column, position, board, word):
         
+            # check this first since we may already be out of bounds but we have verified the match
             if position == len(word):
                 return True
             
             if row >= len(board) or column >= len(board[0]) or row < 0 or column < 0:
                 return False
-            
             
             if board[row][column] == word[position]:
                 char = board[row][column]
