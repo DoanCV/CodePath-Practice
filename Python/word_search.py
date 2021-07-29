@@ -61,3 +61,6 @@ class Solution:
                     if (self.dfs(i, j, 0, board, word)):
                         return True
         return False
+
+# O(N * M) time complexity where N and M are the dimensions of the given matrix. We have to check every character in the matrix.
+# O(N * M) space complexity since in the worst case our recursive call stack is at capacity which is when the word spans across the entire matrix.
