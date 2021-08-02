@@ -36,7 +36,7 @@ def decodeString(s):
         # popped + current_multiplier, in this order since we are reading backwards
       multiplier = ""
       while stack and stack[-1].isdigit():
-        multipler = stack.pop() + multiplier
+        multiplier = stack.pop() + multiplier
       
       # the blank is implicitly 1
       if multiplier == "":
