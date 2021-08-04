@@ -25,3 +25,6 @@ class Solution:
             left.right = right
         
         return root
+ 
+# I am thinking O(N) time complexity since we have to visit every node once. However, I have heard O(N^2) worst case for an unbalanced binary tree.
+# O(N) space complexity for the recursive call stack otherwise we do not use any extra data structures.
