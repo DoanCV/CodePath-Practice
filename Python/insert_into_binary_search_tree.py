@@ -16,3 +16,6 @@ class Solution:
             root.right = self.insertIntoBST(root.right, val)
             
         return root
+    
+# O(N) time complexity, where N is the number of nodes in the given binary tree, since in the worst case we have a BST where each node has only child node and we have to go all the way to the end.
+# O(N) space complexity since we have out recursive call stack and in the worst case we reach the lowest depth.
