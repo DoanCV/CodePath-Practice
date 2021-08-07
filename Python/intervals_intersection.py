@@ -47,5 +47,5 @@ def main():
 
 main()
 
-# O(N + M) time complexity, where N is the length of intervals_a and M is the length of intervals_b, since in the worst case we have to reach the end of both arrays.
+# O(N + M) time complexity, where N is the length of intervals_a and M is the length of intervals_b, since in the worst case we have to reach the end of both arrays. Regardless, we have to reach the end of one of the arrays.
 # O(1) space complexity if we ignore the output array.
