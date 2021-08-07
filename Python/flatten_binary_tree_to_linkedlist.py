@@ -26,5 +26,5 @@ class Solution:
         
         return root
  
-# I am thinking O(N) time complexity since we have to visit every node once. However, I have heard O(N^2) worst case for an unbalanced binary tree.
+# I am thinking O(N) time complexity since we have to visit every node once. However, I have heard O(N^2) worst case for an unbalanced binary tree and O(NlogN) for a balanced tree.
 # O(N) space complexity for the recursive call stack otherwise we do not use any extra data structures.
