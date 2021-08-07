@@ -20,4 +20,4 @@ def main():
 main()
 
 # O(NlogN) time complexity, where N is the number of intervals in the given array, since we sort on the start time. We then have to visit each interval once but that is linear.
-# O(1) space complexity since we are not using any extra data structues.
+# O(N) space complexity since we are creating a new array when we sort unless if it is in place which would mean constant.
