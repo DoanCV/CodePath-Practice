@@ -1,4 +1,4 @@
-####### DUPLICATE OF SQUARE ARRAY ##################
+####### DUPLICATE OF MAKE SQUARES ##################
 
 import math # for absolute value
 
