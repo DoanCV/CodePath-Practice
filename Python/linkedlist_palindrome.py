@@ -51,3 +51,6 @@ class Solution:
             prev = curr
             curr = temp
         return prev
+    
+# O(N) time complexity, where N is the length of the given linkedlist, since we traverse through the linkedlist in a single loop seperately. The loop only lasts for half the number of nodes. Reversing the second half is also linear.
+# O(1) space complexity since we are not using any extra data structures.
