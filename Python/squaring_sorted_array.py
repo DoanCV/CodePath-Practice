@@ -1,3 +1,5 @@
+####### DUPLICATE OF SQUARE ARRAY ##################
+
 import math # for absolute value
 
 class Solution:
