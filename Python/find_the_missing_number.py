@@ -22,6 +22,7 @@ def find_missing_number(nums):
   i = 0
   while i < len(nums):
     correct = nums[i]
+    # we cant include N since we have an array of size N but N + 1 possible numbers
     if correct < len(nums) and nums[i] != nums[correct]:
       nums[i], nums[correct] = nums[correct], nums[i]
     else:
