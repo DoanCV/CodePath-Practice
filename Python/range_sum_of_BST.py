@@ -35,3 +35,31 @@ class Solution:
       
 # O(N) time complexity, where N is the number of nodes in the given binary tree, since we visit each node once
 # O(N) space complexity since in the worst case we store the maximum number of nodes at a level which is proportional to N.
+
+class Solution:
+    def rangeSumBST(self, root: Optional[TreeNode], low: int, high: int) -> int:
+        """
+        Lets try recursive dfs
+        
+        if we are at a leaf node or the tree is empty, the node will contribute 0 to the sum
+        
+        we will recurse left if the current value is too large since we need a smaller value to add to the total sum
+        we will recurse right if the current value is too small since we need a large value to add to the total sum
+        
+        we will recurse both left and right if the current value is in the range
+        """
+        
+        if root is None:
+            return 0
+        else:
+            if root.val < low:
+                total = self.rangeSumBST(root.right, low, high)
+            elif root.val > high:
+                total = self.rangeSumBST(root.left, low, high)
+            else:
+                total = root.val + self.rangeSumBST(root.right, low, high) + self.rangeSumBST(root.left, low, high)
+        
+        return total
+
+# O(N) time complexity since we visit each node once
+# O(N) space complexity for the recursive call stack but we do not explicitly use extra data structures.
