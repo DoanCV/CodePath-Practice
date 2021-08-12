@@ -14,6 +14,31 @@ while we are not at the end of the array
   else
     increment the current position
 
+ex. 
+nums = [1,4,4,3,2]
+
+i = 0
+nums[i] = 1
+nums[ nums[i] - 1 ] = 1
+same so increment i
+nums = [1,4,4,3,2]
+
+i = 1
+nums[i] = 4
+nums[ nums[i] - 1 ] = 3
+not the same so swap
+nums = [1,3,4,4,2]
+
+i = 1
+nums[i] = 3
+nums[ nums[i] - 1 ] = 4
+not the same so swap
+nums = [1,4,3,4,2]
+
+i = 1
+nums[i] = 4
+nums[ nums[i] - 1 ] = 4
+they are the same numbers so that is our duplicate
 """
 
 def find_duplicate(nums):
@@ -30,3 +55,8 @@ def find_duplicate(nums):
 
     else:
       i += 1
+  # no need to return anything at this point since we are guranteed a number will be duplicated
+  
+  
+# O(N) time complexity, where N is the length of the given array, since in the worst case we complete everything in one loop with no repeated steps.
+# O(1) space complexity since we are not using any extra data structures.
