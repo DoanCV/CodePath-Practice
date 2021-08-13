@@ -34,3 +34,5 @@ class Solution:
             max_depth = max(depth, max_depth)
         
         return max_depth
+# O(N) time complexity, where N is the number of nodes in our binary tree, since we visit every node once.
+# O(N) space complexity since in the worst case, every node in the second to last level has two children which maximizes the size of the queue.
