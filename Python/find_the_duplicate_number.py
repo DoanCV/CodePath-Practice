@@ -64,7 +64,7 @@ def find_duplicate(nums):
 """
 Follow up:
 Can you do this without modifiying the input array and still use O(1) space?
-Joma Tech (Anime): Trivial
+Joma Tech (Anime): Sounds like you need some help. This question is trivial.
 
 We can use tortoise and hare to find a cycle and then we find the start of this cycle. 
 We have a cycle because of the Pigeonhole principle and the assumption that we have N + 1 numbers from 1 to N.
