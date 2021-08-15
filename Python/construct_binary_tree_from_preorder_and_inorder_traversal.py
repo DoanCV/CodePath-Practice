@@ -25,7 +25,7 @@ in preorder we skip until something in right subtree and get 20
     and so on...
 
 the problem is how long we take to get to the middle or the parent of each subtree
-    we repeat this process for each subtree which is O(N^2)
+    we repeat this process for each subtree which is O(N^2) in the case we have a skewed tree
     instead we can use hashmap, mape the {value at a given index: the index itself}
 
 the idea is to quickly find the "middle" index to split our inorder into two subtrees since we immediately see it in preorder
