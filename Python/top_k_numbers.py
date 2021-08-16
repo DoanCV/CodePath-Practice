@@ -26,5 +26,5 @@ def find_k_largest_numbers(nums, k):
   return list(heap)
   
   
- # O(N) time complexity, where N is the length of the given array, since we traverse through the array once and do not repeat any calculations.
+ # O(N * logk) time complexity, where N is the length of the given array and k is the number of elements that we need to return. We traverse through the array once and do not repeat any calculations. It takes logK time to remove the smallest number from our minheap.
  # O(k) space complexity since we keep out heap to size k.
