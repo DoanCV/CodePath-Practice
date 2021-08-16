@@ -69,3 +69,6 @@ class Solution:
         root.right = self.buildOutSubTrees(preorderStart + (inordermid - inorderStart + 1), inordermid + 1, inorderEnd, preorder, inorder)
         
         return root
+    
+# O(N^2) time complexity where N is the length of the given list. In a right skewed tree we will have to keep searching to the end for the index of the parent of subtrees in the inorder array.
+# O(1) space complexity if we do not consider the recursive call stack.
