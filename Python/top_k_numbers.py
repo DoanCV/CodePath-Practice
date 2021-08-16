@@ -1,6 +1,8 @@
 from heapq import *
 
 """
+Brute force: we can just sort and take the last k elements of the sorted list
+
 Use a min heap
   we need the largest numbers and in heapq when we pop we get the smallest element since they get higher priority
   so we will insert only k elements into the heap
