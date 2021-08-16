@@ -50,3 +50,6 @@ class Solution:
             right_nodes = self.countNodes(root.right)
             
             return 1 + left_nodes + right_nodes
+        
+# O(logN * logN) time complexity, where N is the number of nodes in the given binary tree. The first logN is from the divide an conquer where we split the search in half each time we do not have a depth match. We do this logN times since that is the depth of the binary tree.
+# O(1) space complexity if we don't consider recursive call stack.
