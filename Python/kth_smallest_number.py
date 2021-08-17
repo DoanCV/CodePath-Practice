@@ -26,5 +26,5 @@ def find_Kth_smallest_number(nums, k):
       
       return -heappop(heap)
       
-# O(N) time complexity, where N is the length of the given array, since we traverse through the array once and without repeating any calculations. 
+# O(N * logk) time complexity, where N is the length of the given array, since we traverse through the array once without repeating any calculations and it takes O(logk) to extract and rebalance heap. 
 # O(k) space complexity since k is the size of the max heap
