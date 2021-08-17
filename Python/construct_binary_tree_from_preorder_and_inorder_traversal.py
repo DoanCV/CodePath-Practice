@@ -37,6 +37,45 @@ then we build each subtree in the same manner by recursively splitting our inord
                       15    7
 
 """
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def buildTree(self, preorder: List[int], inorder: List[int]) -> Optional[TreeNode]:
+        
+        inorder_map = {val: idx for idx, val in enumerate(inorder)}
+        
+        return self.buildOutSubTrees(0, 0, len(inorder) - 1, preorder, inorder, inorder_map)
+    
+    def buildOutSubTrees(self, preorderStart, inorderStart, inorderEnd, preorder, inorder, inorder_map):
+        
+        if preorderStart > len(preorder) - 1 or inorderStart > inorderEnd:
+            return None
+        
+        # create current node
+        root = TreeNode(preorder[preorderStart])
+        
+        """
+        inordermid = 0
+        for i in range(inorderStart, inorderEnd + 1):
+            if root.val == inorder[i]:
+                inordermid = i
+        """
+        inordermid = inorder_map[root.val]
+            
+        # build left subtree
+        root.left = self.buildOutSubTrees(preorderStart + 1, inorderStart, inordermid - 1, preorder, inorder, inorder_map)
+        
+        # build right subtree
+        root.right = self.buildOutSubTrees(preorderStart + (inordermid - inorderStart + 1), inordermid + 1, inorderEnd, preorder, inorder, inorder_map)
+        
+        return root
+    
+# O(N) time complexity, where N is the size of the given array, since we take advantage of constant lookup time when looking for middle value from the inorder list.
+# O(N) space complexity since we are using a hashmap to store the inorder array, mapping values to index.
 
 # Definition for a binary tree node.
 # class TreeNode:
