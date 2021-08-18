@@ -22,12 +22,12 @@ def find_k_frequent_numbers(nums, k):
   
   min_heap = []
   for key, value in frequencies.items():
-    heappush(min_heap, (key, value))
+    heappush(min_heap, (value, key))
     if len(min_heap) > k:
       heappop(min_heap)
   
   for curr in range(len(min_heap)):
-    key, value = heappop(min_heap)
+    value, key = heappop(min_heap)
     topNumbers.append(key)
 
   return topNumbers
