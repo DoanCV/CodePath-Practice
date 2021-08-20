@@ -37,10 +37,23 @@ sticking to trees it looks like
 
 left is copy and right is new addition to the left
 """
-
 def find_subsets(nums):
   subsets = []
+
+  # append empty set
+  subsets.append([])
   
+  # loop through the given array
+    # loop through the subsets that we have so far
+      # add the current element to a each element in a copy of subsets
+      # add the copy into subsets
+  for curr in nums:
+    previous = len(subsets)
+    for i in range(previous):
+      copy = list(subsets[i])
+      copy.append(curr)
+      subsets.append(copy) 
+
   return subsets
 
 
@@ -51,3 +64,6 @@ def main():
 
 
 main()
+
+# O(N * 2^N) time complexity, where N is the length of the given array. For each iteration, the size of subsets doubles.
+# O(N * 2^N) space complexity since that is how many subsets there are.
