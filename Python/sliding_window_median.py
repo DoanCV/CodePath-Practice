@@ -101,3 +101,6 @@ def main():
 
 main()
 
+
+# O(N * K) time complexity, where N is the size of nums and k is the size of our sliding window. We traverse through nums once and for each element we are inserting into a heap and rebalancing which takes O(K) time. Also, we are removing the start element of our window from our heap which takes O(K) to search.
+# O(K) space complexity since we are storing the elements of our sliding window into our two heaps which together have size k.
