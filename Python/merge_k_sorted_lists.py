@@ -5,7 +5,7 @@ class ListNode:
     self.value = value
     self.next = None
 
-  # we need to override the "<" sincewe are using a node class
+  # we need to override the "<" since we are using a node class
   def __lt__(self, other):
     return self.value < other.value
 
