@@ -5,7 +5,7 @@ class Solution:
         
         relative to the height of the current building, we need to know out of the highest buildings, which is the lowest to bound the water
         
-        the difference between this minimum height and the current height is the amount of water that is trapped vetically along this building
+        the difference between this minimum height and the current height is the amount of water that is trapped vertically along this building
         
         we will keep track of the sum to return
         """
