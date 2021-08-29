@@ -95,7 +95,7 @@ def find_duplicate(nums):
     # create another pointer go to the next element after where slow left off in the cycle and keep going until we find the slow pointer again
   curr = nums[nums[slow]]
   cycle_length = 1
-  while start != nums[slow]:
+  while curr != nums[slow]:
     curr = nums[curr]
     cycle_length += 1
   
