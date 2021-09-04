@@ -10,15 +10,50 @@ class LRUCache:
     def __init__(self, capacity: int):
         self.capacity = capacity
         self.hashmap = {}
-        self.head = Node()
-        self.tail = Node()
+        self.head = Node(0, 0)
+        self.tail = Node(-1, -1)
         self.head.next = self.tail
         self.tail.prev = self.head
         
     def get(self, key: int) -> int:
-        
+        # if key exists return the value
+            # make the one we just accessed the most recently used one
+            # move it to the head
+            
+        # return -1 if the key does not exist
 
     def put(self, key: int, value: int) -> None:
+        # add to hashmap and head of linkedlist
+        
+        # if the size is greater than capacity, remove the tail 
+    
+    
+    # at initialization
+    # head <-> tail
+    # add node say 1
+    # head [1] tail
+    def addToHead(self, node):
+        # head <-> [1]  tail
+        headNext = self.head.next
+        self.head.next = node
+        node.prev = self.head
+        
+        # head <-> [1] <-> tail
+        node.next = headNext
+        headNext.prev = node
+    
+    # say capacity is 0, we want to remove the node we just added
+    # head <-> [1] <-> tail
+    def removeFromList(self, node):
+        nextNode = node.next
+        prevNode = node.prev
+        
+        # head <- [1] -> tail
+        # head <-> tail
+        prevNode.next = nextNode
+        nextNode.prev = prevNode
+        
+    def removeEndofList(self):
         
 
 
