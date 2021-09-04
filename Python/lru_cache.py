@@ -17,16 +17,39 @@ class LRUCache:
         
     def get(self, key: int) -> int:
         # if key exists return the value
+        if key in self.hashmap:
             # make the one we just accessed the most recently used one
-            # move it to the head
-            
+            # remove it from the list and move it to the head
+            node = self.hashmap[key]
+            self.removeFromList(node)
+            self.addToHead(node)
+            return node.value
+        
         # return -1 if the key does not exist
+        else:
+            return -1
+        
 
     def put(self, key: int, value: int) -> None:
-        # add to hashmap and head of linkedlist
-        
-        # if the size is greater than capacity, remove the tail 
-    
+        # if key already exists, update the value
+        if key in self.hashmap:
+            node = self.hashmap[key]
+            # move to head of linkedlist since this is something we just accessed
+            self.removeFromList(node)
+            self.addToHead(node)
+            node.value = value
+            
+        # else we are trying to add a new key
+        else:
+            # if the size is greater than capacity, remove the tail from the linkedlist and remove from hashmap and then add the new key to the head
+            if len(self.hashmap) >= self.capacity:
+                toRemove = self.tail.prev
+                self.removeFromList(toRemove)
+                del self.hashmap[toRemove.key]
+                
+            node = Node(key, value)
+            self.hashmap[key] = node
+            self.addToHead(node)
     
     # at initialization
     # head <-> tail
@@ -52,11 +75,15 @@ class LRUCache:
         # head <-> tail
         prevNode.next = nextNode
         nextNode.prev = prevNode
-        
+    
+    """
+    # delete the key
+    # head <-> [1] <-> [2] <-> tail
     def removeEndofList(self):
-        
-
-
+        toRemove = self.tail.prev
+        del self.hashmap[toRemove.key]
+        self.removeFromList(toRemove)
+    """
 # Your LRUCache object will be instantiated and called as such:
 # obj = LRUCache(capacity)
 # param_1 = obj.get(key)
