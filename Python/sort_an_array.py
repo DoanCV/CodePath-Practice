@@ -97,3 +97,4 @@ class Solution:
             k += 1
         
 # O(NlogN) time complexity where N is the length of the given array. Best case our array is length 1 so that is constant. Hoever in the worst case, we are cutting our searches in half. We have a recurrance relation T(N) = 2T(N/2) + N. By the Master Theorem, we evaluate our f(N), which is N and mulitply by logN.        
+# O(N) space complexity since we have to store the elements of our halves somewhere. However, we have a recursive call stack but when we draw out the tree we can see that it is complete binary tree which has logN depth so our space complexity is O(N + logN) => O(N).
