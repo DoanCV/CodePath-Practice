@@ -59,7 +59,10 @@ class Solution:
 
         # if the shcedule is has all of the tasks then it is valid
         return len(sorted_order) == numCourses
+
       
+# O(V + E) time complexity, where V is the number of courses and E is the number of prerequisites, since we visit each vertex or course once and we add each edge or prerequisite link once to our graph.
+# O(V + E) space complexity since that is the size of our adjacency list
 """
 Grokking version
 """
