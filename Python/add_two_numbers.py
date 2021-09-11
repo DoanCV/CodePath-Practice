@@ -62,7 +62,8 @@ the digit we build is 8
 
 
 E
-
+O(N + M) time complexity, where N and M are the lengths of l1 and l2. We solve in one pass
+O(N + M) space complexity since we are building the result based on the digits of the sum
 """
 
 class Solution:
