@@ -4,7 +4,6 @@
 #         self.val = val
 #         self.next = next
 
-
 """
 U
 have have k linkedlists
@@ -67,6 +66,8 @@ result: 1 -> 1 -> 2
 and so on
 
 E
+O(Nlogk) time complexity since we visit each element in all of the linked list once and size k heap takes logk time to reblance
+O(k) space complexity since our heap is size k.
 """
 from heapq import *
 
