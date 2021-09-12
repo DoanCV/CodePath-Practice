@@ -3,7 +3,7 @@ Recursive BFS to build permutations
   we need to have num amount of open and close to be balanced
   start with an empty array of size 2 * num
     since strings are immutable we will use this to fill in permutation
-  we will add the complated permutation into the result array
+  we will add the completed permutation into the result array
     a permutation is valid when the count of open parentheses is equal to num and the count of closed parentheses is equal to num
   when we move on to the next index in our builder we are proceeding to the next level of our tree 
   
