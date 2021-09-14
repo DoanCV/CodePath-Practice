@@ -1,5 +1,5 @@
 """"
-two pointer since we can keep track of where the last 0s and the last 1s are
+two pointers since we can keep track of where the last 0s and the last 1s are
 
 keep track of:
 low = 0
