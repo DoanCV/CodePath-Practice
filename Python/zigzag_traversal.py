@@ -31,6 +31,7 @@ def traverse(root):
       if direction_left_to_right:
         current_level.append(current_node.val)
       else:
+        # maybe not legal queue operation so instead we can reverse the current level
         current_level.appendleft(current_node.val)
     
       if current_node.left is not None:
