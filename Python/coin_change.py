@@ -27,6 +27,9 @@ class Solution:
         # 0 coins to make 0 amount
         dp[0] = 0
         
+        ### sort the coins for optimization see note below
+        coins.sort()
+        
         for i in range(amount + 1):
             for j in range(len(coins)):
                 
@@ -35,8 +38,15 @@ class Solution:
                     # we want the fewst amount of coins
                     # account for taking out the coin, find the best way be accessing the dp array
                     dp[i] = min(dp[i], 1 + dp[i - coins[j]])
-        
+                
+                ### optimization: if the coins are sorted then we can stop checking since our coins are too big
+                else:
+                    break
+                
         if dp[amount] > amount:
             return -1  
         else:
             return dp[amount]
+        
+# O(N*M) time complexity, where N is the length of the coins array and M is our amount, since we loop through each coin and each amount up to the given amount.
+# O(M) space complexity since that is the size of our dp array to store subproblems.
