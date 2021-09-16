@@ -50,7 +50,7 @@ class Solution:
         # order to search and remove
         unique_letter_to_number = {"z": 0, "w": 2, "u": 4, "x": 6, "g": 8, "o": 1, "h": 3, "f": 5, "s": 7, "i": 9}
         
-        # remove the word form from the frequency map
+        # remove the english word form from the frequency map
         # we have a result array to keep track of what number we found, it will only have 0s or 1s
         result = [0 for _ in range(10)]     # a result array which is worst case size 10 since we are representing 0-9
         for key, val in unique_letter_to_number.items():
