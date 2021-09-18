@@ -57,18 +57,49 @@ store the negative of the given sum so that it gets removed first
 
 ### Now the above is too slow
 
+have a helper function to push to the minheap if the pointers are not out of range
 
+add the smallest pair which is the first element of each list
+keep finding pairs until we have k of them
+we will keep increasing i or j while keeping the other the same
+    Whenever a pair is chosen into the output result, the next pair in the row gets added to the priority queue of current options. 
+    Also, if the chosen pair is the first one in its row, then the first pair in the next row is added to the queue
 
-IRE
+I
+See class below
+
+R
+nums1=[1,7,11]
+nums2=[2,4,6]
+
+      2   4   6
+   +------------
+ 1 |  3   5   7
+ 7 |  9  11  13
+11 | 13  15  17
+
+E
+O(klogN) time complexity where N is the length of nums1 and k is the the number of pairs we are asked to return. We loop k times for k pairs but we add m pairs into the heap and rebalcning on the pair sum takes O(logN)
+O(N) space complexity since that is the size of our heap.
 """
 from heapq import *
 class Solution:
     def kSmallestPairs(self, nums1: List[int], nums2: List[int], k: int) -> List[List[int]]:
+        
+        
         min_heap = []
         results = []
         
+        # helper function, commented code is the alterative if the helper function did not exist
+        def push(i, j):
+        
+            if i < len(nums1) and j < len(nums2):
+                heappush(min_heap, (nums1[i] + nums2[j], i, j) )
+        
+        
         # add the first element of each since that is guaranteed the smallest pair, then we build out
-        heappush(min_heap, (nums1[0] + nums2[0], 0, 0))
+        # heappush(min_heap, (nums1[0] + nums2[0], 0, 0))
+        push(0,0)
         
         while min_heap and len(results) < k:
             # position pointers
@@ -79,15 +110,22 @@ class Solution:
             
             # check the next column in our matrix representation or the next value in nums2
                 # also check if we go out of range
-            if i < len(nums1) and j + 1 < len(nums2):
-                heappush(min_heap, (nums1[i] + nums2[j + 1], i, j + 1))
+            # if i < len(nums1) and j + 1 < len(nums2):
+                # heappush(min_heap, (nums1[i] + nums2[j + 1], i, j + 1))
+            push(i, j + 1)
             
             # check the next row in our matrix representation or the next value in nums1 since sum(i + 1, 0) > sum(i, 0) but sum(i, 1) > sum(i, 0) may be true
             if j == 0:
                 # check if we go out of range
-                if i + 1 < len(nums1) and j < len(nums2):
-                    heappush(min_heap, (nums1[i + 1] + nums2[j], i + 1, j))
+                # if i + 1 < len(nums1) and j < len(nums2):
+                    # heappush(min_heap, (nums1[i + 1] + nums2[j], i + 1, j))
+                push(i + 1, 0)
+                
         return results
+    
+    
+        
+        
 """        
 from heapq import *
 class Solution:
