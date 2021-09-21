@@ -40,8 +40,11 @@ There is only one parameter steps so we will use a 1-D array to keep track of pr
 
 the recurrence relation is actually the fibonacci sequence: f(n) = f(n-1) + f(n-2)
 
-IRE
+IR
 
+E
+O(N) time complexity where N is n or the number of steps
+O()
 """
 
 # Top Down
