@@ -9,10 +9,16 @@ find the number of combinations that make up that amount
 we have unlimited amount of each coins
 
 M
+We can see that there is overlapping subproblems
 
-PIRE
+Base case: 1 way to get 0
+
+PIR
+
+E
+O(N * M) time complexity where N is the total number of coin types that are given and M is the target.
+O(M) space complexity since we are checking every amount below in a 1-D array.
 """
-
 
 class Solution:
     def change(self, amount: int, coins: List[int]) -> int:
