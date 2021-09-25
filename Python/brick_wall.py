@@ -37,9 +37,16 @@ return number of rows/levels - max edge count
 I
 See class below
 
-RE
-"""
+R
+Another edge case:
+    if we have really large width bricks it is not worth intializing our hashmap like the way I commented out since that makes a key for each position
+    if we find an edge position then we make a key otherwise don't bother
 
+E
+O(N * M) time complexity, where N is the number of rows/levels in our wall and M is the number of bricks at each level. We have to check every brick for edges and we do this with a nested for loop.
+O(M) space complexity since our hashmap stores a key for each edge position. The worst case number of keys is equal to the total width of any level - 1. We subtract 1 since we do not include the rightmost edge since that is the trivial result.
+
+"""
 class Solution:
     def leastBricks(self, wall: List[List[int]]) -> int:
         max_edges = 0
@@ -73,6 +80,5 @@ class Solution:
                 position_map[edge_position] += 1
                 
                 max_edges = max(max_edges, position_map[edge_position])
-        
         
         return number_of_rows - max_edges
