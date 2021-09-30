@@ -25,12 +25,21 @@ class Solution:
                 converted.append(ordering[char])
             
             new_words.append(converted)
-        
+            
+        """
         # parallel traversal since nested for loop doesnt exactly work
         for word1, word2 in zip(new_words, new_words[1:]):
             # > since we may have duplicates
             if word1 > word2:
                 return False
+        """
+        
+        for i in range(1, len(new_words)):
+            
+            if new_words[i - 1] > new_words[i]:
+                return False
+            
+        
         
         # everything is sorted as we have checked
         return True
