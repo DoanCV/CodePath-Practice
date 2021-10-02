@@ -57,6 +57,7 @@ class Solution:
                 result *= stack.pop()
                 result += stack.pop()
         
+        # add the first group
         result += sign * number
         
         return result
