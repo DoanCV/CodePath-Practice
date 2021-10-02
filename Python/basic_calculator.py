@@ -20,6 +20,11 @@ when we are done adding or subtracting numbers, reset the running sum since we f
 
 4. if we see a ) then we pop our previous group result and combine with our running sum, then we reset our running sum
 
+
+FOLLOW UP:
+Add * and /
+
+just pass through twice, first with * and / then again like before
 """
 
 class Solution:
