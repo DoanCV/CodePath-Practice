@@ -57,7 +57,6 @@ class Solution:
                 result *= stack.pop()
                 result += stack.pop()
         
-        if number != 0:
-            result += sign * number
+        result += sign * number
         
-        return result 
+        return result
