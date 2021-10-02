@@ -71,7 +71,7 @@ class Solution:
                 quotient = num // key
                 remainder = num % key
                 
-                # if we already accounted for this key then continue
+                # if we already accounted for this key then continue, in this case integer division would give us 0
                 if not quotient: 
                     continue
                 
