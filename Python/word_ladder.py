@@ -12,7 +12,10 @@ when we find the endword then we are done and return the depth that we had to go
 find all one letter change varatations and check if it is in our wordlist
     change each letter in our current word with eveyr letter in the alphabet
     if a variation is in the wordlist add it to our queue and count that as taking another transformation
-    if 
+
+
+O(N * k^2) time complexity, where N is the number of words in our word list and k is the length of a word, since in the worst case we have to visit eveyr word in our wordlist and splicing is linear time so k^2.
+O(k) space complexity since in the worst case we replace each letter of our word with 26 letters and add that to the queue.
 """
 
 from collections import deque
