@@ -11,7 +11,10 @@ also if the transaction occurs within 60 minutes of another transaction with the
 M
 we can map the name to the transactions associated with that name
 
-PIRE
+PIR
+
+E
+O(N) time complexity, where N is the number of transactions. We traverse through our transactions to map the name to its respective transactions. Then we check all transactions per key for validity. These two loops are worst case O(N).
 """
 
 class Solution:
