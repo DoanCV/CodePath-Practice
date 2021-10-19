@@ -24,7 +24,8 @@ when we are done adding or subtracting numbers, reset the running sum since we f
 FOLLOW UP:
 Add * and /
 
-just pass through twice, first with * and / then again like before
+just pass through twice, first with * and / then again evaluate like before
+    with order of operations * and / come first no matter what which then leaves + and -
 """
 
 class Solution:
