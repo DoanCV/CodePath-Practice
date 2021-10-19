@@ -8,6 +8,7 @@ class Solution:
     def isValidBST(self, root: Optional[TreeNode]) -> bool:
         """
         check the range given the value of the current node
+            we know all nodes in the left subtree must be less than its root and right subtree must be greater than its root
         
         iterative dfs - use a stack
         
