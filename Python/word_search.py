@@ -62,5 +62,5 @@ class Solution:
                         return True
         return False
 
-# O(N * M) time complexity where N and M are the dimensions of the given matrix. We have to check every character in the matrix.
+# O(N * M * 4^k) time complexity where N and M are the dimensions of the given matrix and k is the length of the given word. We have to check every character in the matrix. Each position we check has 4 moves.
 # O(N * M) space complexity since in the worst case our recursive call stack is at capacity which is when the word spans across the entire matrix.
