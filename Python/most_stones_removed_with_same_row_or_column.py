@@ -24,7 +24,8 @@ helper()
 
     look through
 
-
+O(N^2) time complexity where N is the number of stones. We loop through each stone's row and column and then through those of its group. Creating our hashmap is linear.
+O(N) space complexity since that is the size of both our hashmaps and also in the worst case our set. We visit every stone but they are arranged diagonally so we visit all of them but we have nothing to remove.
 """
 from collections import defaultdict
 class Solution:
