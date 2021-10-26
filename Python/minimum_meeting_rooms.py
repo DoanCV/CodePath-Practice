@@ -1,12 +1,4 @@
 """
-Definition of Interval.
-class Interval(object):
-    def __init__(self, start, end):
-        self.start = start
-        self.end = end
-"""
-
-"""
 Greedy Solution
 
 sort the intervals on the start time
@@ -41,6 +33,7 @@ class Solution:
         return len(min_heap)
 
 
+    
 ### Grokking solution
 from heapq import *
 
