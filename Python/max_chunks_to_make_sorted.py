@@ -3,6 +3,9 @@ If the maximum from the left (inclusive) is less than or equal to the
         minimum from the right, we create a chunk there because there is no value 
         to the right of the current subarray that would be required to be sorted 
         with the left chunk
+        
+O(N) time
+O(N) space
 """
 
 class Solution:
