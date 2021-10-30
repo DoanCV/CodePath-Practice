@@ -19,7 +19,6 @@ class Solution:
             min_values_from_right.append(curr_min)
         min_values_from_right = min_values_from_right[::-1]
         
-        max_values_from_left = []
         curr_max = 0
         for i in range(len(arr) - 1):
             curr_max = max(curr_max, arr[i])
