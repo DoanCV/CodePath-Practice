@@ -45,7 +45,9 @@ cases:
             
         even length arr
             the head value will not change
-    
+
+O(logN) time complexity where N is the given number. We cut our elements that we are searching through in half for each round of the game.
+O(1) space complexity since we do not use any auxillary data structures to simulate the game
 """
 
 class Solution:
