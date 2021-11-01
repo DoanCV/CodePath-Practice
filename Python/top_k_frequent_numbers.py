@@ -1,3 +1,31 @@
+##### LC TOP K FREQUENT ELEMENTS
+from heapq import *
+from collections import Counter
+
+class Solution:
+    def topKFrequent(self, nums: List[int], k: int) -> List[int]:
+        freq_map = Counter()
+        
+        for num in nums:
+            freq_map[num] += 1
+            
+        max_heap = []
+        
+        for key, value in freq_map.items():
+            
+            heappush(max_heap, (-value, key) )
+        
+        results = []
+        for _ in range(k):
+            freq, num = heappop(max_heap)
+            results.append(num)
+            
+        return results
+
+
+
+##### GROKKING VERSION
+
 from heapq import *
 
 def find_k_frequent_numbers(nums, k):
@@ -26,7 +54,7 @@ def find_k_frequent_numbers(nums, k):
     if len(min_heap) > k:
       heappop(min_heap)
   
-  for curr in range(len(min_heap)):
+  for _ in range(len(min_heap)):
     value, key = heappop(min_heap)
     topNumbers.append(key)
 
