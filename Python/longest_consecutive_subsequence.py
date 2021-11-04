@@ -15,6 +15,8 @@ we then loop through each element of the given array
 
 return the max sequence length
 
+O(N) time complexity where N is the length of the given array. We check each streak once since we focus on only the start of the sequence. There are worst case N sequences but this means each element is a sequence so that is useless.
+O(N) space complexity since we create a set of the given elements
 """
 
 class Solution:
