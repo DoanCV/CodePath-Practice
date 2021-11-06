@@ -1,3 +1,21 @@
+##### Dynamic Programming
+class Solution:
+    def maxProfit(self, prices: List[int]) -> int:
+        # we are keeping track of the maximum profits so far for each day
+        dp = [0 for _ in range(len(prices))]
+        
+        # the minimum price so far is always going to be used in the calculation since that maximizes profit
+        min_price = prices[0]
+        
+        for i in range(len(dp)):
+            dp[i] = max(dp[i-1], prices[i] - min_price)
+            min_price = min(min_price, prices[i]) # we update min price after since we obviously cannot sell the same day we buy
+        
+        return dp[-1]
+
+    
+    
+#### Sliding Window / Two pointers
 """
 ex.
 prices = [7,1,5,3,6,4]
@@ -47,9 +65,6 @@ The idea is that we are trying to get window_start to the lowest value possible 
 
 class Solution:
     def maxProfit(self, prices: List[int]) -> int:
-        """
-        sliding window        
-        """
         
         max = 0
         window_start = 0
