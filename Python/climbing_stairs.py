@@ -44,7 +44,7 @@ IR
 
 E
 O(N) time complexity where N is n or the number of steps
-O()
+O(N) space complexity since we store the number of ways to get to steps 0 to N in an array of size N + 1.
 """
 
 # Top Down
