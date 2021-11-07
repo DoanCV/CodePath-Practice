@@ -1,7 +1,7 @@
 """
 U
 we have an array of positive integers (30 <= temperatures[i] <= 100) representing temperatures
-    we want to know the number of days from the current temperature until we we a warmer day
+    we want to know the number of days from the current temperature until we have a warmer day
 
 return an array, answers, where answers[i] is the number of days to wait after the ith day to get a warmer temperature
     if there is no answer then answer[i] == 0
