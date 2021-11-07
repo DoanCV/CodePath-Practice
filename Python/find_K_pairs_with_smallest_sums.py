@@ -6,7 +6,7 @@ of course the first pair, the one with the first elements from each array is goi
     we get this pair from our heap we will see if the next pair will either be the next element from nums1 with the current element from nums2 or the current element from nums1 with the next element from nums2
     we keep doing this until we have k pairs
 
-O(klogk) time complexity where k is the number of pairs that we need to find.
+O(klogk) time complexity where k is the number of pairs that we need to find. We only have k elements in our heap at a time and will only try at most k pairs.
 """
 
 from heapq import *
