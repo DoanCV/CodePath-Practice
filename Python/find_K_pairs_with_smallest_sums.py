@@ -1,4 +1,45 @@
 """
+Best solution
+
+use a min_heap to keep track of the k pairs that can be formed from combining either the first k elements of nums1 with the first element of nums2 or all the elements of nums1 with the first element from nums2. Choosing either option depends on the length of nums1.
+of course the first pair, the one with the first elements from each array is going to be part of our answer
+    we get this pair from our heap we will see if the next pair will either be the next element from nums1 with the current element from nums2 or the current element from nums1 with the next element from nums2
+    we keep doing this until we have k pairs
+
+O(klogk) time complexity where k is the number of pairs that we need to find.
+"""
+
+from heapq import *
+class Solution:
+    def kSmallestPairs(self, nums1: List[int], nums2: List[int], k: int) -> List[List[int]]:
+        min_heap = []
+        
+        for i in range(min(k, len(nums1))):
+            # heap stores tuple of 
+                # (sum of pair, value from nums1, value from nums2, index in nums2)
+            heappush(min_heap, (nums1[i] + nums2[0], nums1[i], nums2[0], 0))
+            
+            
+        k_pairs = []
+        while k > 0 and min_heap:
+            _, value_nums1, value_nums2, position_in_nums2 = heappop(min_heap)
+            
+            k_pairs.append( [value_nums1, value_nums2] )
+            
+            # we can potentially have a pair that is smaller if the next value in nums2 is smaller than the next value in nums1
+            if position_in_nums2 + 1 < len(nums2):
+                
+                new_candidate = value_nums1 + nums2[position_in_nums2 + 1]
+                heappush(min_heap, (new_candidate, value_nums1, nums2[position_in_nums2 + 1], position_in_nums2 + 1))
+                
+            k -= 1
+        
+        return k_pairs
+                
+
+
+
+"""
 U
 We are given two arrays and both are already sorted
 
