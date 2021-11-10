@@ -6,7 +6,7 @@ place after, before, in between
                            /          \
                       [1,3]            [3,1]
                         /                \
-        [1,3,5],[5,1,3],[1,3,5]     [3,1,5],[5,3,1],[3,5,1]
+        [1,3,5],[5,1,3],[1,5,3]     [3,1,5],[5,3,1],[3,5,1]
 
 we can use BFS with a queue to keep track of the old permutations and then insert the current value in all positions of the old permutations
 OR
