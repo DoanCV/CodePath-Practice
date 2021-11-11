@@ -1,3 +1,25 @@
+class Solution:
+    def largestRectangleArea(self, heights: List[int]) -> int:
+        stack = []
+        max_size = 0
+        heights.append(0)
+        
+        for bar, height in enumerate(heights):
+            while stack and heights[stack[-1]] >= height:
+                
+                full_bar_height = heights[stack.pop()]
+                
+                if not stack:
+                    width = bar
+                else:
+                    width = bar - stack[-1] - 1
+                
+                max_size = max(max_size, full_bar_height * width)
+            
+            stack.append(bar)
+            
+        return max_size 
+
 """
 we know that the largest area always has at least one complete bar
     since this is the case we can use a stack to keep track of the left and right boundaries where the bars to the left and right have a lower height
