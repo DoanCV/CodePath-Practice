@@ -1,3 +1,77 @@
+"""
+Before adding a new building, pop the buildings taller than the new one. The building popped out represent the height of a rectangle with the new building as the right boundary and the current stack top as the left boundary
+
+[2,1,5,6,2,3] -> [2,1,5,6,2,3,0]
+
+stack = [-1]
+max = 0
+
+bar index = 0
+stack = [-1, 0]
+max = 0
+
+bar index = 1
+stack = [-1, 1]
+max = 2
+
+bar index = 2
+stack = [-1, 1, 2]
+max = 2
+
+bar index = 3
+stack = [-1, 1, 2, 3]
+max = 2
+
+    heights[4] = 2 < 6
+    max = 6
+    stack = [-1, 1, 2]
+    heights[4] = 2 < 5
+    max = 10
+    stack = [-1, 1]
+
+bar index = 4
+stack = [-1, 1, 4]
+max = 10
+
+bar index = 5
+stack = [-1, 1, 4, 5]
+max = 10
+
+bar index = 6
+stack = [-1, 6]
+max = 10
+"""
+class Solution:
+    def largestRectangleArea(self, heights: List[int]) -> int:
+        
+        max_size = 0
+        
+        stack = []
+        stack.append(-1) # this way we will never get empty stack and we know that -1 index is the last bar so we make that 0
+        heights.append(0)
+
+        for bar in range(len(heights)):
+
+            # if we find height[i]'s >= what we currently see in the stack we add to the stack
+            # this way our stack elements are always in ascending order
+            while heights[bar] < heights[stack[-1]]:
+                
+                full_bar_height = heights[stack.pop()]
+                
+                width = bar - stack[-1] - 1 # avoid double count of left and right boundaries
+                
+                max_size = max(max_size, full_bar_height * width)
+
+            stack.append(bar)
+            
+        return max_size 
+
+
+    
+    
+    
+    
+# almost the same just not written as well as the above    
 class Solution:
     def largestRectangleArea(self, heights: List[int]) -> int:
         stack = []
