@@ -48,6 +48,9 @@ class Solution:
         
         stack = []
         stack.append(-1) # this way we will never get empty stack and we know that -1 index is the last bar so we make that 0
+        
+        # we need to add an extra element, a 0 like in the histogram problem
+        # in the case where the given heights are all in ascending order, it creates an ending point that breaks this trend, allowing us to calculate the areas
         heights.append(0)
 
         for bar in range(len(heights)):
