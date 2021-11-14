@@ -12,7 +12,33 @@ we can use BFS with a queue to keep track of the old permutations and then inser
 OR
 we can use recursion
 """
+# BFS
+from collections import deque
 
+
+def find_permutations(nums):
+  numsLength = len(nums)
+  result = []
+  permutations = deque()
+  permutations.append([])
+  for currentNumber in nums:
+    # we will take all existing permutations and add the current number to create new permutations
+    n = len(permutations)
+    for _ in range(n):
+      oldPermutation = permutations.popleft()
+      # create a new permutation by adding the current number at every position
+      for j in range(len(oldPermutation)+1):
+        newPermutation = list(oldPermutation)
+        newPermutation.insert(j, currentNumber)
+        if len(newPermutation) == numsLength:
+          result.append(newPermutation)
+        else:
+          permutations.append(newPermutation)
+
+  return result
+
+
+# DFS
 def find_permutations(nums): 
   result = []
   index = 0
