@@ -1,6 +1,6 @@
 """
 At first glance I thought sliding window but then I realized what happens when we have a smaller window that is valid but we confirmed a larger one? Our count is wrong.
-    Nothing is given to use sorted so its bait. We also can have negative integers.
+    Nothing is given to us sorted so its bait. We also can have negative integers.
 
 
 
