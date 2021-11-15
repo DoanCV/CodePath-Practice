@@ -2,7 +2,7 @@
 DFS with a helper function
 
     keep building up to k length
-        when we are done add a copy sot aht we can backtrack and try finish building the next combination
+        when we are done add a copy so that we can backtrack and try finish building the next combination
         
     build by trying every number from current to the end
         recurse with the current combination
