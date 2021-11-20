@@ -2,7 +2,8 @@
 DFS with backtracking
     for each substring check if it is palindrome
 
-O(2^N) time complexity where N is the length of the given string. There are 2^N ways to partition.
+O(N * 2^N) time complexity where N is the length of the given string. There are 2^N ways to partition. We verify palindrome so that takes N time.
+O(N) space complexity since we have a path that we are storing, worst case the length of the given string.
 """
 
 class Solution:
