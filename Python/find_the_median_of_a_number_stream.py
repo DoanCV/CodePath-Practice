@@ -14,7 +14,7 @@ Two heaps
       so we will need to rebalance
       if the size of max heap is more than 1 element larger we pop from max heap and push negative of negative into min heap
       if the size of the max heap is smaller than the min heap we will pop from min heap and push negative into max heap
-        this guaranteed our max heap is larger when the number of elements visited is odd, this doesnt matter it is just a case we have to handle, can easily be min heap        
+        this guarantees our max heap is larger when the number of elements visited is odd, this choice doesnt matter it is just a case we have to handle, can easily be min heap        
 """
 from heapq import *
 
