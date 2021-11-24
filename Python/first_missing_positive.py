@@ -1,7 +1,7 @@
 """
 We are given an unsorted array. Return the first missing positive integer.
     The array can have negative values
-    duplicates? our bounds are still the same so it doesnt matter
+    duplicates? nope
 
 
 Two cases
