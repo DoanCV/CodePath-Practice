@@ -14,7 +14,8 @@ The two cases limit the possible answers to 1 to n + 1 where n is the length of 
     in case 2, the answer must be within 1 to n
 
 We can use extra space to which value from 1 to n is missing but since our solution space is limited to the size of our input and we do not have duplicates, we can use a trick.
-  let the index of each element of the array represent the value from 1 to n, obviously we need to adjust by 1 since python is 0 indexed, if we found a number in the range then the value at the index will be negative
+  let the index of each element of the array represent the value from 1 to n, obviously we need to adjust by 1 since python is 0 indexed
+    if we found a number in the range then the value at the index will be negative
   this is essentially hashing the index to a "bool" telling us if the number is missing or not
   once we scan again the first positive value we find will tell us that index + 1 is our answer
   
@@ -31,6 +32,13 @@ nums = [3,4,-5,1]
 i = 1
 nums = [3,4,-5,-1]
 
+i = 2
+nums = [3,4,-5,-1]
+
+i = 3
+nums = [-3,4,-5,-1]
+
+answer is i + 1 = 1 + 1 = 2
 
 O(N) time complexity where N is the length of the given array since we solve with three linear passes.
 O(1) space complexity since we just modify the given array
