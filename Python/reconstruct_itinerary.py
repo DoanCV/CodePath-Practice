@@ -35,6 +35,8 @@ we start at a and get rid of edge a,b
     back up to a, add that
 result = [d,c,b,e,b,a]
 reversed result, i.e. correct answer = [a,b,e,b,c,d]
+
+O(E * logE) where E is the number of edges since we sort each list in the adjacency list.
 """
 from collections import defaultdict
 class Solution:
