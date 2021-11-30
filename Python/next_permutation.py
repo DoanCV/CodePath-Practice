@@ -42,9 +42,19 @@ class Solution:
                 
                 # we need to sort in place so the line below is not allowed
                 # nums[i:] = sorted(nums[i:])
-                # we do know one thing everything is decreasing so two pointers
-                for k in range((len(nums) - i) // 2):
-                    nums[i+k], nums[len(nums)-1-k] = nums[len(nums)-1-k], nums[i+k]
+                # we do know one thing everything is decreasing so use two pointers
+                
+                left = i
+                right = len(nums) - 1
+                while left < right:
+                    nums[left], nums[right] = nums[right], nums[left]
+                    left += 1
+                    right -= 1
+                
+                # cleaner way
+                # for k in range((len(nums) - i) // 2):
+                #     nums[i+k], nums[len(nums)-1-k] = nums[len(nums)-1-k], nums[i+k]
                 
                 return
+            
         nums.reverse()
