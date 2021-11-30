@@ -36,3 +36,24 @@ we start at a and get rid of edge a,b
 result = [d,c,b,e,b,a]
 reversed result, i.e. correct answer = [a,b,e,b,c,d]
 """
+from collections import defaultdict
+class Solution:
+    def findItinerary(self, tickets: List[List[str]]) -> List[str]:
+        
+        self.adjacency_list = defaultdict()
+        for u, v in tickets:
+            self.adjacency_list[u].append(v)
+        
+        for u in self.adjacency_list:
+            self.adjacency_list[u].sort()
+        
+        self.itinerary = []
+        self.dfs("JFK")
+        return self.itinerary[::-1]
+    
+    def dfs(self, from_vertex):
+        while self.itinerary.[from_vertex]:
+            to_vertex = self.itinerary.[from_vertex].pop(0)
+            self.dfs(to_vertex)
+        
+        self.itinerary.append(from_vertex)
