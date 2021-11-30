@@ -21,6 +21,8 @@ nums[i] > nums[i-1]
 
     swap 1 and 2
     then sort everything after the 1
+    
+nums = [2,3,2,1,4,5]
 """
 class Solution:
     def nextPermutation(self, nums: List[int]) -> None:
@@ -40,7 +42,7 @@ class Solution:
                 
                 # we need to sort in place so the line below is not allowed
                 # nums[i:] = sorted(nums[i:])
-                # we do know one thing everything is
+                # we do know one thing everything is decreasing so two pointers
                 for k in range((len(nums) - i) // 2):
                     nums[i+k], nums[len(nums)-1-k] = nums[len(nums)-1-k], nums[i+k]
                 
