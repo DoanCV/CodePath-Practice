@@ -21,11 +21,14 @@ ex.
 the parentheses are there to help but return (1, (2, x, x), (3, (4, x, x), (5, x, x))) 
     -> "1,2,x,x,3,4,x,x,5,x,x"
 
+O(N) time since we visit each node once
 
 
 Deserialize
 use a queue to reconstruct the tree
     discard the "x" when we see it
+
+O(N) time since we visit each element of data once
 
 """
 from collections import deque
