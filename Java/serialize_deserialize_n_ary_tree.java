@@ -56,7 +56,6 @@ class Codec {
 
     // we always have an extra comma so get rid of it
     result.deleteCharAt(result.length() - 1);
-    System.out.println(result.toString());
     return result.toString();
   }
 
