@@ -35,7 +35,7 @@ class Solution:
                 
                 # if we can take the coin, do it
                 if coins[j] <= i:
-                    # we want the fewst amount of coins
+                    # we want the fewest amount of coins
                     # account for taking out the coin, find the best way be accessing the dp array
                     dp[i] = min(dp[i], 1 + dp[i - coins[j]])
                 
