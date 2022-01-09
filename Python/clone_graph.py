@@ -10,9 +10,9 @@ class Node:
 Clone a graph using the given Node class.
     We can have an empty graph which would return an empty graph
 
-DFS Iterative
+DFS/BFS Iterative
 
-use a stack
+use a stack/queue, if i use pop or popleft in this case it doesnt matter
 have a visited set
 start with the given node
 
