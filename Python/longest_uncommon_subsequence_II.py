@@ -17,7 +17,7 @@ class Solution:
     def findLUSlength(self, strs: List[str]) -> int:
         
         def isSubsequence(str1, str2):
-            # start at the beginning and if all the characters in one string exists in the smae relative order in the other then one is subsequence of the other
+            # start at the beginning and if all the characters in one string exists in the same relative order in the other then one is subsequence of the other
             a = len(str1)
             b = len(str2)
             
