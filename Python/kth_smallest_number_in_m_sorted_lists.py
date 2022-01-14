@@ -1,5 +1,27 @@
-from heapq import *
+"""
+More concise and pythonic code
 
+Scan from the left column with a pointer at the start of each row
+    try out the first k elements
+    return the kth
+"""
+
+from heapq import *
+class Solution:
+    def kthSmallest(self, matrix: List[List[int]], k: int) -> int:
+        
+        min_heap = [(matrix[row][0], row, 0) for row in range(min(k, len(matrix)))]
+        
+        for i in range(k):
+            answer, row, column = heappop(min_heap)
+            
+            if column + 1 < len(matrix[0]):
+                heappush(min_heap, (matrix[row][column + 1], row, column + 1))
+            
+        return answer
+
+      
+      
 """
 brute force: concat arrays
 
@@ -11,6 +33,7 @@ when we are done
 
 return the top of the heap
 """
+from heapq import *
 
 def find_Kth_smallest(lists, k):
   min_heap = []
