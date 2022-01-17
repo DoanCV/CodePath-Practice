@@ -1,4 +1,46 @@
 """
+lets try quickselect instead since that way we can get average case linear time
+    heap approach, which similar to sorting, makes the problem trivial
+    
+    
+find pivot point to split the array into three groups
+    elements smaller than pivot, elements equal to pivot, elements greater than pivot
+determine how many elements are in each group
+
+note: since we are looking for kth largest, lets say left is larger than k and right is less than k
+
+if k <= left 
+    we know to look left
+if k > left + mid
+    look at right part
+else
+    we are in the middle part and we are done
+"""
+class Solution:
+    def findKthLargest(self, nums: List[int], k: int) -> int:
+        
+        if not nums:
+            return
+        
+        pivot = random.choice(nums)
+        
+        greaterThanPivot = [x for x in nums if x > pivot]
+        mid = [x for x in nums if x == pivot]
+        lessThanPivot = [x for x in nums if x < pivot]
+        
+        L = len(greaterThanPivot)
+        M = len(mid)
+        
+        if k <= L:
+            return self.findKthLargest(greaterThanPivot, k)
+        elif k > L + M:
+            return self.findKthLargest(lessThanPivot, k - L - M)
+        else:
+            return mid[0]
+
+        
+        
+"""
 U
 We have an array of integers and an integer k
 
