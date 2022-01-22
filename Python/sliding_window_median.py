@@ -104,3 +104,79 @@ main()
 
 # O(N * K) time complexity, where N is the size of nums and k is the size of our sliding window. We traverse through nums once and for each element we are inserting into a heap and rebalancing which takes O(K) time. Also, we are removing the start element of our window from our heap which takes O(K) to search.
 # O(K) space complexity since we are storing the elements of our sliding window into our two heaps which together have size k.
+
+
+# ON LEETCODE
+"""
+U
+we are given a list of integers and a window size
+for each window, find the median and return the list of window medians
+
+M
+Two heaps just like median of data stream
+
+P
+Use a min heap and a max heap to store the elements of the window
+    the min heap stores the largest elements
+    the max heap stores the smallest elements
+    
+this way we can easily access the median    
+    if we have even number of elements then we take the average between the top element of each heap
+    otherwise we take the top element of the heap that we want to be larger
+        in this case i will use the max_heap
+    
+the size of the two heaps combined is the size of the window
+
+
+"""
+# floating point issues on LC but it is correct in logic
+from heapq import *
+class Solution:
+    def medianSlidingWindow(self, nums: List[int], k: int) -> List[float]:
+        medians = []
+        
+        min_heap = []
+        max_heap = []
+        
+        def insert_num(num):
+            
+            # try to insert
+            if not max_heap or -max_heap[0] > num:
+                heappush(max_heap, -num)
+            else:
+                heappush(min_heap, num)
+                
+            # rebalance if necessary
+            if len(max_heap) > len(min_heap) + 1:
+                heappush(min_heap, -heappop(max_heap))
+            elif len(min_heap) > len(max_heap):
+                heappush(max_heap, -heappop(min_heap))
+                
+        def find_median():
+            return (min_heap[0] - max_heap[0]) / 2.0 if len(max_heap) == len(min_heap) else float(-max_heap[0])
+        
+        def remove_num(num):
+            
+            if -num in max_heap:
+                max_heap.remove(-num)
+                
+                if len(min_heap) > len(max_heap):
+                    heappush(max_heap, -heappop(min_heap))
+                    
+            else:
+                min_heap.remove(num)
+                
+                if len(max_heap) > len(min_heap) + 1:
+                    heappush(min_heap, -heappop(max_heap))
+
+        
+        for i in range(len(nums)):
+            
+            insert_num(nums[i])
+            
+            if len(max_heap) + len(min_heap) == k:
+                medians.append(find_median())
+                remove_num(nums[i + 1 - k])
+            
+        return medians
+
