@@ -9,6 +9,50 @@ starting from the max frequency add the words in the list to the result until we
     k can be negative so return the remainder
     decrement the max frequency when we finish all the words since we may need to keep going
 """
+from collections import Counter
+
+class Solution:
+    def topKFrequent(self, words: List[str], k: int) -> List[str]:
+        
+        freq_map = Counter(words)
+        word_map = {}
+        
+        max_freq = 0 
+        for key, value in freq_map.items():
+
+            if value not in word_map:
+                word_map[value] = []
+                
+            word_map[value].append(key)
+            max_freq = max(max_freq, value)
+            
+        
+        result = []
+        temp = k
+        while k > 0:
+            
+            if max_freq in word_map:
+                
+                words = sorted(word_map[max_freq])
+                
+                k -= len(words)
+                
+                if k < 0:
+                    for i in range(temp - len(result)):
+                        result.append(words[i])
+                    
+                else:
+                    for word in words:
+                        result.append(word)
+                
+            max_freq -= 1
+        
+        return result
+
+# O(N) time complexity since we solve in worst case three passes.
+
+
+
 
 from queue import PriorityQueue
 from collections import Counter
