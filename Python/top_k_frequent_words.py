@@ -1,3 +1,15 @@
+"""
+Optimal solution, better than heap
+    use two hashmaps
+    the first maps the word to its frequency
+    then we build the second one which maps the frequency to a list of words of that frequency
+   
+find the maximum frequency
+starting from the max frequency add the words in the list to the result until we have k of them
+    k can be negative so return the remainder
+    decrement the max frequency when we finish all the words since we may need to keep going
+"""
+
 from queue import PriorityQueue
 from collections import Counter
 
@@ -32,5 +44,5 @@ class Solution:
         
         return result
 
-# O(N) time complexity, where N is the length of the given array, since we have to traverse the given array once to get the frequencies. The other traversals are worst case O(N) since we can have an array of all unique words. But N + N + N grows asymptotically as N.
+# O(NlogN) time complexity, where N is the length of the given array, since we have to traverse the given array once to get the frequencies. The other traversals are worst case O(N) since we can have an array of all unique words. But N + N grows asymptotically as N. When we add to the heap that takes log(N) time. 
 # O(N) space complexity since in the worst case the given array has only unique words which means the length of the array is the same length of the hashmap. The size of the heap is the same as the hashmap.
