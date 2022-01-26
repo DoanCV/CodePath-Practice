@@ -6,7 +6,8 @@
 #         self.right = right
 """
 U
-given the root of a binary tree
+given the root of a binary tree, find the maximum path sum
+    a single node can appear once in a path
 
 M
 Binary tree recursive DFS
