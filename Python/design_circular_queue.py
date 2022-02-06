@@ -1,3 +1,7 @@
+"""
+Use two pointers to keep track of front and rear of the queue
+"""
+
 class MyCircularQueue:
 
     def __init__(self, k: int):
