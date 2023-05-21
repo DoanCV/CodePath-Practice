@@ -16,7 +16,7 @@ class Solution:
 
         def dfs(row, column):
             if grid[row][column] == 1:
-                queue.append( [row, column, 0] )
+                queue.append( [row, column, 0] ) # we can add all elements of the first island and still have the correct distance since the border elements will hit the other island first. remember one step at a time so inner ones wait their turn in the bfs queue
 
                 grid[row][column] = "munch"
                 for dx, dy in directions:
